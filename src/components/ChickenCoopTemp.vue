@@ -40,9 +40,6 @@ import axios from 'axios';
 import VueSpeedometer from 'vue-speedometer';
 import moment from 'moment';
 
-const apiKey = 'bd2b895a49164201beb7ed8cb48abfce92e29246b1044e7fbe1fc765ab2d4782';
-const deviceKey = 'f75f1b034b1944038649c8fb32f8f4c53ba640d3c15b4bb0a05e6510b26ace32';
-
 export default {
 
   components: {
@@ -50,19 +47,21 @@ export default {
   },
 
   data: () => ({
-    ambientWeatherMACAddress: '24:7D:4D:A3:64:FD',
+    ambientWeatherMACAddress: process.env.VUE_APP_MAC_ADDRESS,
     ambientWeatherResults: null,
     chickenCoopTemp: null,
     timer: '',
     latestUpdate: null,
     refreshRateInSeconds: 10,
     loading: true,
+    apiKey: process.env.VUE_APP_API_KEY,
+    deviceKey: process.env.VUE_APP_DEVICE_KEY,
   }),
 
   methods: {
     async getTempurature() {
       this.loading = true;
-      const results = await axios.get(`https://api.ambientweather.net/v1/devices/${this.ambientWeatherMACAddress}?apiKey=${deviceKey}&applicationKey=${apiKey}&limit=1`);
+      const results = await axios.get(`https://api.ambientweather.net/v1/devices/${this.ambientWeatherMACAddress}?apiKey=${this.deviceKey}&applicationKey=${this.apiKey}&limit=1`);
       // eslint-disable-next-line prefer-destructuring
       this.ambientWeatherResults = results.data[0];
       // eslint-disable-next-line prefer-destructuring
