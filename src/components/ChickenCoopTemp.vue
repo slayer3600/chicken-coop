@@ -70,9 +70,6 @@ export default {
       this.latestUpdate = moment(new Date()).format('MM/DD/YYYY, h:mm:ss a');
       this.loading = false;
     },
-    getAlert() {
-      alert('hello chicken coop');
-    },
   },
   created() {
     this.getTempurature();
