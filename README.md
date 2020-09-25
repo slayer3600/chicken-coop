@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+Prod URL: https://jeremysandboxstorage.z5.web.core.windows.net/
+Vue Gauge: https://github.com/palerdot/vue-speedometer
