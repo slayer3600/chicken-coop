@@ -2,7 +2,7 @@
   <v-card class="mx-auto text-center" max-width="400" :loading="loading">
     <v-list-item two-line>
       <v-list-item-content>
-        <v-list-item-title class="headline">Huntsman Chicken Coop</v-list-item-title>
+        <v-list-item-title class="headline">Chicken Coop</v-list-item-title>
         <v-list-item-subtitle>Updated: {{latestUpdate}}</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
